@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block styling %}
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+h1, h5 {
+    text-align: center;
+}
+
+h5 {
+    font-weight:normal
+}
+{% endblock %}
+
+{% block trappingRainWaterActive %}
+class="active"
+{% endblock %}
+
+{% block content %}
+<br>
+<h1>Trapping Rain Water</h1>
+<h5>Trapped Water: {{ waterValue }} square units</h5>
+<div class="center">
+    <iframe name="iframe" id="rain-water-model" width="960" height="540" frameBorder="0" src="{{ url_for('rain_water_model') }}"></iframe>
+</div>
+
+
+<div class="container" style="width:25%">
+    <div class="row">
+        <div class="col-sm">
+            <a id=btn2>
+                <button type="button" id="generate-bars-from-list" class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#exampleModalCenter">Generate New Model</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Enter Bar Heights (Comma Separated Integers)</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="form1" action="#" method="post">
+                <div class="modal-body">
+                    <input type="text" class="form-control" id="list-values" name="list">
+                </div>
+                <div class="modal-footer">
+                    <t>To generate randomly, leave blank&emsp;&emsp;&emsp;&emsp;</t>
+                    <a href=# id=fromlist>
+                        <button type="submit" form="form1" class="btn btn-secondary">Generate</button>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
