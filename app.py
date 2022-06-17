@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return "Flask heroku app."
+    return "Flask heroku app.TESTTTTT"
 
 if __name__ == '__main__':
     app.run()
