@@ -4,6 +4,7 @@ from rainwater import trap_rain_water
 from rainwater import plot_rain_water
 import random
 import os
+import time
 
 # initialize Flask application
 app = Flask(__name__)
@@ -44,7 +45,7 @@ def trapping_rain_water():
 
     # generate Plotly model and export to HTML file
     plot_rain_water(int_list, trapped)
-    
+    time.sleep(5)
     # render template and pass in trapped water value
     return render_template("trappingrainwater.html", waterValue=water)
 
