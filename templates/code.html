@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block styling %}
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+h1, h5 {
+    text-align: center;
+}
+
+.keyword { color: #1965fc; }
+
+.comment { color: #949494; }
+
+.container {
+    margin: 0 auto
+    width: 100%;
+}
+
+.container-bg {
+    background: xxx;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+h5 {
+    font-weight:normal
+}
+{% endblock %}
+
+{% block codeActive %}
+class="active"
+{% endblock %}
+
+{% block content %}
+<br>
+<h1>Python Solution</h1>
+<div class="container rounded p-5 my-4 border bg-light">
+    <pre>
+<span class="keyword">class Solution:</span>
+    <span class="keyword">def trap</span>(self, height: <span class="keyword">List</span>[<span class="keyword">int</span>]) <span class="keyword">-> int</span>:
+        <span class="comment">'''
+        This solution uses a two-pointer approach, with a pointer starting on either side of the list. We will also keep 
+        track of the maximum height encountered on either side as we iterate through the list, as this is crucial in 
+        determining how much water can be trapped. As we iterate using the two pointers, we will move in the pointer for 
+        whatever side has the smaller maximum height encountered. We don't care about the other side's precise height - 
+        it is enough to know that it is larger, since that means our water level will surely be bounded by the current 
+        maximum height on this side. We keep iterating in this manner, moving in with whatever side has the smaller 
+        maximum height and updating values as we progress. This is the basic premise of this algorithm, please refer to 
+        the comments below for more details.
+        '''</span>
+        
+        <span class="comment"># initialize pointers</span>
+        left <span class="keyword">=</span> 0
+        right <span class="keyword">= len</span>(height) - 1
+        
+        <span class="comment"># initialize maximum heights</span>
+        maxLeft <span class="keyword">=</span> height[left]
+        maxRight <span class="keyword">=</span> height[right]
+        
+        water <span class="keyword">=</span> 0
+        
+        <span class="comment"># iterate through list until pointers meet</span>
+        <span class="keyword">while</span> left <span class="keyword"><</span> right:
+            <span class="comment"># if maxLeft is less than maxRight, move in with left pointer - we know water must be bounded by maxLeft</span>
+            <span class="keyword">if</span> maxLeft <span class="keyword"><</span> maxRight:
+                left <span class="keyword">+=</span> 1
+                
+                <span class="comment"># see if any water is trapped at current index by maxLeft</span>
+                <span class="keyword">if</span> height[left] <span class="keyword"><</span> maxLeft:
+                    water <span class="keyword">+=</span> (maxLeft - height[left])
+                <span class="keyword">else</span>:
+                    maxLeft <span class="keyword">=</span> height[left]
+            <span class="comment"># otherwise, move in with right pointer - we know water must be bounded by maxRight</span>
+            <span class="keyword">else:</span>
+                right <span class="keyword">-=</span> 1
+                
+                <span class="comment"># see if any water is trapped at current index by maxRight</span>
+                <span class="keyword">if</span> height[right] <span class="keyword"><</span> maxRight:
+                    water <span class="keyword">+=</span> (maxRight - height[right])
+                <span class="keyword">else</span>:
+                    maxRight <span class="keyword">=</span> height[right]
+                    
+        <span class="keyword">return</span> water</pre>
+</div>
+{% endblock %}

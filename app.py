@@ -4,7 +4,6 @@ from rainwater import trap_rain_water
 from rainwater import plot_rain_water
 import random
 import os
-import time
 
 # initialize Flask application
 app = Flask(__name__)
@@ -18,6 +17,10 @@ def home():
 @app.route("/rain-water-model")
 def rain_water_model():
     return render_template("rainwatermodel.html")
+
+@app.route("/code")
+def code():
+    return render_template("code.html")
 
 
 @app.route("/trapping-rain-water/", methods=['GET', 'POST'])
@@ -33,7 +36,7 @@ def trapping_rain_water():
     if request.method == 'POST':
         temp = request.form['list']
 
-        if not temp:
+        if not temp.strip() or not any(char.isdigit() for char in temp):
             int_list = [random.randint(0, 10) for i in range(12)]
         else:
             # split user input into list of integers
@@ -45,7 +48,7 @@ def trapping_rain_water():
 
     # generate Plotly model and export to HTML file
     plot_rain_water(int_list, trapped)
-    time.sleep(5)
+
     # render template and pass in trapped water value
     return render_template("trappingrainwater.html", waterValue=water)
 

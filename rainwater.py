@@ -61,4 +61,4 @@ def plot_rain_water(heights, trapped):
     fig.layout.title = None
 
     # export to HTML file, which can later be embedded as IFrame
-    fig.write_html("./templates/rainwatermodel.html")
+    fig.write_html("static/rainwatermodel.html")

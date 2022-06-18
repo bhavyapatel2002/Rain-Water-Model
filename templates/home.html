@@ -1,9 +1,51 @@
 {% extends "base.html" %}
 
+{% block styling %}
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+h1, h5 {
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto
+    width: 100%;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+h5 {
+    font-weight:normal
+}
+{% endblock %}
+
 {% block homeActive %}
 class="active"
 {% endblock %}
 
 {% block content %}
-<h1>Test</h1>
+<br>
+<h1>LeetCode Rain Water Problem</h1>
+<br>
+<p style="text-align:center;">
+    <img width="543" height="442" src="/static/trapping-rain-water-problem.png" />
+</p>
+<br>
+<div class="container" style="width:25%">
+    <div class="row">
+        <div class="col-sm">
+            <a href="/trapping-rain-water" class="text-decoration-none" id=btn2>
+                <button type="button" id="generate-bars-from-list" class="btn btn-secondary btn-lg btn-block" data-toggle="modal" data-target="#exampleModalCenter">View Model</button>
+            </a>
+        </div>
+    </div>
+</div>
 {% endblock %}
