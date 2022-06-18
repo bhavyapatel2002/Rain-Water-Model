@@ -1,6 +1,6 @@
 # Rain-Water-Model
 
-Access this application at: https://rainwatermodel.pythonanywhere.com/
+#### Access this application at: https://rainwatermodel.pythonanywhere.com/
 
 ## Background
 
@@ -16,3 +16,10 @@ This web application was developed as a model to visualize solutions to the [Tra
 
 ## Images
 
+![Home Screenshot](https://github.com/bhavyapatel2002/Rain-Water-Model/blob/ef320dbfbd69711d82c766bd4066ba31ae15a2b1/static/Home%20Screenshot.png)
+
+![Model Screenshot](https://github.com/bhavyapatel2002/Rain-Water-Model/blob/ef320dbfbd69711d82c766bd4066ba31ae15a2b1/static/Model%20Screenshot.png)
+
+![Generate Screenshot](https://github.com/bhavyapatel2002/Rain-Water-Model/blob/3881755cc4b4a74982fa1972c23e59abb2d28e4b/static/Generate%20Screenshot.png)
+
+![Code Screenshot](https://github.com/bhavyapatel2002/Rain-Water-Model/blob/ef320dbfbd69711d82c766bd4066ba31ae15a2b1/static/Code%20Screenshot.png)
